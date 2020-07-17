@@ -1,6 +1,10 @@
 # Desafio Semana #1
 
+
 ```js
+// Apenas para trocar o commit
+
+
 // Declarar uma variável chamada `myvar`, sem valor.
 let myVar;
 

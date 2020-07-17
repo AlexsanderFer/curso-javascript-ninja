@@ -1,6 +1,9 @@
 # Desafio da semana #2
 
 ```js
+
+// Apenas para trocar o commit
+
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function soma( x, y ) {
    return x + y;
