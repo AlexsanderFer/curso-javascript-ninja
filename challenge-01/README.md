@@ -42,4 +42,10 @@ function divisao(x, y) {
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 divisao(10, 2);
 
+<<<<<<< HEAD
 ```
+=======
+// teste com resolvidos
+	
+```
+>>>>>>> 867778683f295621ba97c52b712e5e485a95bf24
