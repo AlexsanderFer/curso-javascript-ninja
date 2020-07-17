@@ -8,23 +8,25 @@ function soma( x, y ) {
    return x + y;
  }
 
+
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var mySoma = soma 2, 8 ) + 5;
+let mySoma = soma 2, 8 ) + 5;
 
 // Qual o valor atualizado dessa variável?
-15
+15 
 
 // Declare uma nova variável, sem valor.
-var varsemvalor;
+let varSemValor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
-    O valor da variável agora é VALOR.
+O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
+
 function addValue() {
-    varsemvalor = 15;
-    return 'O valor da variável agora é ' + varsemvalor;
+    varSemValor = 15;
+    return 'O valor da variável agora é ' + varSemValor;
 }
 
 // Invoque a função criada acima.
