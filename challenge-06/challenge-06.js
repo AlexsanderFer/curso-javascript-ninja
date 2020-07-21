@@ -4,7 +4,7 @@ para começar o desafio.
 Declare uma letiável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-let = championship; 
+var championship = "Campeonato Brasileiro"; 
 console.log(championship);
 
 /*
@@ -14,8 +14,8 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 // ?
-let teams = ['Atlético MG', 'Cruzeiro', 'Santos', 'Corinthians', 'São Paulo',];
-console.log('Times que estão participando do campeonato:', teams );
+var teams = ['Atlético MG', 'Cruzeiro', 'Santos', 'Corinthians', 'São Paulo',];
+console.log('Times que estão participando do campeonato:', teams);
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -34,10 +34,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-    if(position < 1 || position > 5) {
-        return 'Não temos a informação do time que está nessa posição.';
-    }
-    return 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.'; 
+    return `O time que está em ${position}º lugar é o ${teams[position - 1]}.`;
 }
 
 /*
@@ -54,9 +51,9 @@ console.log(showTeamPosition(7));
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-let numero = 20;
-while(numero <= 30) {
-    console.log(numero++); 
+var counter = 20;
+while(counter <= 30) {
+    console.log(counter++); 
 }
 
 /*
@@ -72,11 +69,11 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
-    let hexa; 
+    var hexa; 
     switch(color) {
         case 'red':
         hexa =  '#F0000';
-          break;
+        break;
         case 'blue':
         hexa = '#0000FF';
         break;
