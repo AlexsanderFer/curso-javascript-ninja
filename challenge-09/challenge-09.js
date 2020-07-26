@@ -1,3 +1,5 @@
+(function(){
+
 /*
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
@@ -9,41 +11,41 @@ ajuste o posicionamento das letiáveis e funções internas, para que os código
 dentro de `console.log` que estão retornando `undefined` retornem o valor
 correto da letiável ou função chamada.
 */
-function myFunction() {
-    console.log( 'Na função `myFunction`, o primeiro número é', number1 );
-    console.log( 'Na função `myFunction`, o segundo número é', number2 );
-    let number1 = 10;
-    return number1 + number2;
-    let number2 = 20;
+    function myFunction() {
+        let number1 = 10;
+        let number2 = 20;
+        console.log('Na função `myFunction`, o primeiro número é', number1);
+        console.log('Na função `myFunction`, o segundo número é', number2);
+        return number1 + number2;
 }
-myFunction();
+    myFunction();
 
 /*
     myFunction2();
 */
-function myFunction2() {
-    console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
-    let sum = function sum() {
+    function myFunction2() {
+        let sum = function sum() {
+        let number1 = 10;
+        let number2 = 20;
         return number1 + number2;
     };
-    let number1 = 10;
-    let number2 = 20;
-    return sum();
+        console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
+        return sum();
 }
 myFunction2();
 
 /*
     myFunction3();
 */
-function myFunction3() {
-    console.log( 'A soma de 40 e 50 é igual a', sum() );
-    let number2 = 50;
-    console.log( 'Na função myFunction3, number1 é igual a', number1 );
-    let number1 = 40;
-    return sum();
-    function sum() {
-        return number1 + number2;
-    };
+    function myFunction3() {
+        function sum() {
+            let number1 = 40;
+            let number2 = 50;
+            console.log( 'Na função myFunction3, number1 é igual a', number1 );
+            return number1 + number2;
+        };
+        console.log('A soma de 40 e 50 é igual a', sum());
+        return sum();
 }
 myFunction3();
 
@@ -60,14 +62,17 @@ o retorno de `calculator`.
 por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
-// ?
+function calculator(num1, num2) {
+    return function(callback) {
+        return callback(num1, num2);
+    };
+}
 
 /*
 Declare uma letiável chamada `sum`, e atribua a ela a função `calculator`,
 passando dois números por parâmetro.
 */
-// ?
-
+    let sum = calculator(2, 2);
 /*
 Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
 `calculator`. E essa função espera um parâmetro `callback`. O `callback`
@@ -77,16 +82,20 @@ para a chamada à `calculator` acima.
 uma função anônima que irá retornar a soma dos dois números que essa função
 anônima tem como seus argumentos.
 */
-console.log( 'O resultado da soma é:' );
-// ?
+console.log('O resultado da soma é:');
+    console.log(sum(function(number1, number2) {
+        return number1 + number2;
+}));
 
 /*
 Agora declare outra letiáveis chamadas `subtraction`, `multiplication`,
 `division` e `mod`, e atribua à elas `calculator`, passando números
 diferentes para cada chamada.
 */
-// ?
-
+    let subtraction = calculator(66, 210);
+    let multiplication = calculator(10, 21);
+    let division = calculator(100, 50);
+    let mod = calculator(990,200);
 /*
 Mostre as letiáveis acima no `console` (uma chamada de console por letiável),
 criando a função de `callback` que faz o cálculo para subração, multiplicação,
@@ -95,13 +104,22 @@ As suas respostas devem estar abaixo dos `console.log` referentes à cada
 chamada.
 */
 console.log( 'O resultado da subtração é:' );
-// ?
+    console.log(subtraction(function (number1, number2) {
+        return number1 - number2;
+    }));
 
 console.log( 'O resultado da multiplicação é:' );
-// ?
+    console.log(multiplication(function (number1, number2) {
+        return number1 * number2;
+    }));
 
 console.log( 'O resultado da divisão é:' );
-// ?
+    console.log(division(function (number1, number2) {
+        return number1 / number2;
+    }));
 
 console.log( 'O resto da divisão é:' );
-// ?
+    console.log(mod(function (number1, number2) {
+        return number1 % number2;
+    }));
+})();

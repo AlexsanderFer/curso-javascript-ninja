@@ -3,38 +3,51 @@ Declare uma letiável chamada `sum` e atribua a ela uma função chamada
 `calculateSum`. A função deve receber dois parâmetros e retornar a soma
 desses parâmetros.
 */
-// ?
+//
+let sum = function calculateSum(a, b) {
+  return a + b;
+}
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-// ?
+//
+
+let value1 = 10;
+let value2 = 20;
+console.log(`A soma de ${value1} e ${value2} é igual a ${sum(value1, value2)}.`);
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-// ?
+//
+console.log(`O nome da função que faz a soma é ${sum}.`);
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-// ?
+//
+function showName() {
+  return 'Alexsander';
+}
 
 /*
 Declare uma letiável chamada `letShowName` que recebe a função criada acima.
 */
-// ?
+//
+let letShowName = showName;
 
 /*
 Usando a letiável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-// ?
+//
+console.log(`A função ${letShowName.name} retorna ${letShowName()}.`);
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -48,28 +61,64 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-// ?
+//
+function calculator(operator) {
+  return function segundaFunction(number1, number2) {
+    let resultado;
+    switch (operator) {
+      case ('+'):
+        resultado = number1 + number2;
+        break;
+      case ('-'):
+        resultado = number1 - number2;
+        break;
+      case ('*'):
+        resultado = number1 * number2;
+        break;
+      case ('/'):
+        resultado = number1 / number2;
+        break;
+      case ('%'):
+        resultado = number1 % number2;
+        break;
+      default:
+        return 'Operação inválida';
+    }
+    return `Resultado da operação: ${number1} ${operator} ${number2} = ${resultado}.`
+  };
+}
 
 /*
 Declare uma letiável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-// ?
+let sum = calculator('+');
+
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-// ?
+//
+console.log(sum(1, 1));
 
 /*
 Agora, declare algumas letiáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-// ?
+//
+let subtraction = calculator('+');
+let multiplication = calculator('*');
+let division = calculator('/');
+let mod = calculator('%');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-// ?
+//
+
+console.log(subtraction(1, 1));
+console.log(multiplication(1, 1));
+console.log(division(1, 1));
+console.log(mod(10, 2));
