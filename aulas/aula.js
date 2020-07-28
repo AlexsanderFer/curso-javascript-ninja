@@ -85,4 +85,9 @@ let obj2 = Object.create(obj);
  * 
  * map();       retorn o array modificado mas não altera o original
  * filter();    
+ * 
+ * reduce();    
+ * reduceRight();   
+
+
 */ 
