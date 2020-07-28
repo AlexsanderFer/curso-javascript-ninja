@@ -7,7 +7,6 @@ desses parâmetros.
 let sum = function calculateSum(a, b) {
   return a + b;
 }
-
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
